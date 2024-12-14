@@ -97,8 +97,9 @@ const Cart = () => {
             return [];
         }
 
-        return products.filter((product) =>
-            data.res.some((item) => item.product_id === product._id)
+        return products.filter((product) => {
+            console.log(data, 'here indata')
+            data.res.some((item) => item.product_id === product._id)}
         );
     }, [data, products]);
 

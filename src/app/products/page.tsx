@@ -41,19 +41,41 @@ const AllProducts = async () => {
   const data: IProduct[] = await getProductData()
 
   return (
-    <div className='flex justify-evenly mt-16 py-10 flex-wrap'>
-      {
-        data.map((product) => {
-          return (
-            <ProductCard id={product._id} key={product._id} title={product.title} price={product.price} img={product.product_image as Array<IImage>} category={product.cloth_category.cloth_category_name} />
-          )
-        })
-      }
-      {/* <ProductCard title="Product 1" price={123} img={P1} />
-      <ProductCard title="Product 2" price={456} img={P2} />
-      <ProductCard title="Product 3" price={789} img={P3} /> */}
+    <section className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white py-20 px-6 md:px-28 flex flex-col items-center">
+      {/* Decorative Circles */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-10 left-10 w-40 h-40 bg-yellow-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-60 h-60 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+      </div>
 
-    </div>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-center text-yellow-400 mb-16 animate-fade-in-up">Our Products</h2>
+
+      <div className="flex flex-wrap justify-center gap-12">
+        {data.length > 0 ? data.map((product) => {
+          const categoryName = product.cloth_category?.cloth_category_name ?? "Unknown Category";
+          return (
+            <ProductCard
+              id={product._id}
+              key={product._id}
+              title={product.title}
+              price={product.price}
+              img={product.product_image as Array<IImage>}
+              category={categoryName}
+            />
+          );
+        }) : <p>No Product Found</p>}
+      </div>
+    </section>
+    // <div className='flex justify-evenly mt-16 py-10 flex-wrap'>
+    //   {
+    //     data.map((product) => {
+    //       return (
+    //         <ProductCard id={product._id} key={product._id} title={product.title} price={product.price} img={product.product_image as Array<IImage>} category={product.cloth_category.cloth_category_name} />
+    //       )
+    //     })
+    //   }
+
+    // </div>
   )
 }
 

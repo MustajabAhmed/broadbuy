@@ -12,10 +12,8 @@ const getProductData = async () => {
       cloth_category_name
     }, title, product_details, _id
   }`)
-  return res 
+  return res
 }
-
-
 
 interface IProduct {
   _id: string,
@@ -31,33 +29,44 @@ interface IProduct {
 
 interface IClothCategory {
   cloth_category_name: string
-  }
+}
 
 export default async function Page({ params }: { params: { slug: string } }) {
-
   const data: IProduct[] = await getProductData()
-
-  // console.log(data);
-  
-
-  const productDetails = data.filter((product) =>  product.cloth_category.cloth_category_name.toLowerCase() === params.slug)
-
-
-  // const filteredProducts = products.filter((product) => product.category === params.slug)
-
+  const productDetails = data.filter((product) => product.cloth_category.cloth_category_name.toLowerCase() === params.slug)
   return (
-    <div className='flex justify-evenly mt-16 py-10 flex-wrap'>
-      {
-        productDetails.length > 0 ? productDetails.map((product) => {
-          return (
-            <ProductCard id={product._id} key={product._id} title={product.title} price={product.price} img={product.product_image as Array<IImage>} category={product.cloth_category.cloth_category_name} />
-          )
-        }) : <p>No Product Found</p>
-      }
-      {/* <ProductCard title="Product 1" price={123} img={P1} />
-      <ProductCard title="Product 2" price={456} img={P2} />
-      <ProductCard title="Product 3" price={789} img={P3} /> */}
 
-    </div>
+    <section className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white py-20 px-6 md:px-28 flex flex-col items-center">
+      {/* Decorative Circles */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-10 left-10 w-40 h-40 bg-yellow-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-60 h-60 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-12">
+        {productDetails.length > 0 ? productDetails.map((product) => {
+          const categoryName = product.cloth_category?.cloth_category_name ?? "Unknown Category";
+          return (
+            <ProductCard
+              id={product._id}
+              key={product._id}
+              title={product.title}
+              price={product.price}
+              img={product.product_image as Array<IImage>}
+              category={categoryName}
+            />
+          );
+        }) : <p>No Product Found</p>}
+      </div>
+    </section>
+    // <div className='flex justify-evenly mt-16 py-10 flex-wrap'>
+    //   {
+    //     productDetails.length > 0 ? productDetails.map((product) => {
+    //       return (
+    //         <ProductCard id={product._id} key={product._id} title={product.title} price={product.price} img={product.product_image as Array<IImage>} category={product.cloth_category.cloth_category_name} />
+    //       )
+    //     }) : <p>No Product Found</p>
+    //   }
+    // </div>
   )
 }
