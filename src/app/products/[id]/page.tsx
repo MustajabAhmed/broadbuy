@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "@/store/slice/cartSlice";
 import { toast } from "react-hot-toast";
 import Quantity from "@/components/Quantity";
+import heroImage from 'public/hero-image.jpg';
 
 const getProductData = async () => {
   const res = await client.fetch(
@@ -33,9 +34,20 @@ interface IProduct {
   cloth_type_name: string;
   product_details: string;
   cloth_category: IClothCategory;
-  product_image: { asset: { url: any } }[];
+  product_image: { asset: { _type: string; _ref: string; url: any } }[]; // Ensure _type and _ref are included
   product_care: string[];
 }
+
+// interface IProduct {
+//   _id: string;
+//   title: string;
+//   price: number;
+//   cloth_type_name: string;
+//   product_details: string;
+//   cloth_category: IClothCategory;
+//   product_image: { asset: { url: any } }[];
+//   product_care: string[];
+// }
 
 interface IClothCategory {
   cloth_category_name: string;
@@ -104,7 +116,7 @@ const Page = ({ params }: PageProps) => {
               width={380}
               height={400}
               className="object-cover object-top transition-transform duration-300 transform group-hover:scale-110"
-              src={urlForImage(productDetail.product_image[0]).width(200).url()}
+              src={productDetail.product_image[0]?.asset ? urlForImage(productDetail.product_image[0].asset).width(200).url() : heroImage}
               alt={productDetail.title}
             />
             {/* Decorative Glow */}
