@@ -38,9 +38,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
     <section className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white py-20 px-6 md:px-28 flex flex-col items-center">
       {/* Decorative Circles */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-10 left-10 w-40 h-40 bg-yellow-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-60 h-60 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-40 h-40 bg-yellow-500 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-60 h-60 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
       <div className="flex flex-wrap justify-center gap-12">
@@ -59,14 +59,5 @@ export default async function Page({ params }: { params: { slug: string } }) {
         }) : <p>No Product Found</p>}
       </div>
     </section>
-    // <div className='flex justify-evenly mt-16 py-10 flex-wrap'>
-    //   {
-    //     productDetails.length > 0 ? productDetails.map((product) => {
-    //       return (
-    //         <ProductCard id={product._id} key={product._id} title={product.title} price={product.price} img={product.product_image as Array<IImage>} category={product.cloth_category.cloth_category_name} />
-    //       )
-    //     }) : <p>No Product Found</p>
-    //   }
-    // </div>
   )
 }

@@ -40,7 +40,7 @@ const Hero = () => {
                         priority
                     />
                     {/* Decorative Glow */}
-                    <div className="absolute -inset-2 bg-yellow-500/20 rounded-lg blur-lg"></div>
+                    <div className="absolute -inset-2 bg-yellow-500/20 rounded-lg blur-lg animate-pulse"></div>
                 </div>
             </div>
         </section>
