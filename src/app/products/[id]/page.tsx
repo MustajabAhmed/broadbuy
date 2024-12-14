@@ -98,9 +98,9 @@ const Page = ({ params }: PageProps) => {
   return (
     <div className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white py-10 px-10 flex flex-col items-center">
       {/* Hero Section with Gradient and Animation */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-10 left-10 w-40 h-40 bg-yellow-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-60 h-60 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute inset-0 ">
+        <div className="absolute top-10 left-10 w-40 h-40 bg-yellow-500 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-60 h-60 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
       <h2 className="text-3xl md:text-4xl font-extrabold text-center text-yellow-400 mb-12 animate-fade-in-up">
