@@ -281,7 +281,7 @@ const Page = ({ params }: PageProps) => {
 
       <div className="flex flex-col lg:flex-row items-center gap-16">
         {/* Image Section */}
-        <div className="relative w-full lg:w-1/2 group">
+        {/* <div className="relative w-full lg:w-1/2 group">
           <div className="relative overflow-hidden rounded-lg shadow-2xl">
             <Image
               src={
@@ -296,12 +296,32 @@ const Page = ({ params }: PageProps) => {
             />
             <div className="absolute -inset-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg blur-lg opacity-75 animate-pulse"></div>
           </div>
+        </div> */}
+
+
+        <div className="flex-1 flex justify-center items-center relative">
+          <div className="relative w-full max-w-md lg:max-w-lg animate-zoom-in">
+            <Image
+              src={
+                productDetail.product_image[0]?.asset
+                  ? urlForImage(productDetail.product_image[0].asset).url()
+                  : heroImage
+              }
+              width={500}
+              height={500}
+              alt={productDetail.title}
+              className="rounded-lg shadow-2xl"
+              priority
+            />
+            {/* Decorative Glow */}
+            <div className="absolute -inset-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg blur-lg opacity-25 animate-pulse"></div>
+          </div>
         </div>
 
         {/* Product Details Section */}
         <div className="text-center lg:text-left flex-1 space-y-6">
           <h1 className="text-4xl font-extrabold animate-slide-in bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
-          {/* <h1 className="text-4xl font-extrabold text-white animate-slide-in"> */}
+            {/* <h1 className="text-4xl font-extrabold text-white animate-slide-in"> */}
             {productDetail.title}
           </h1>
           <p className="text-lg text-gray-300 animate-fade-in-up">

@@ -145,9 +145,9 @@ const ProductCard: FC<ProductCardProps> = ({ id, title, img, price, category }) 
 
   return (
     <Link href={`/products/${id}`} className="group">
-      <div className="relative rounded-lg shadow-lg overflow-hidden bg-gray-800 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+      <div className="relative  shadow-lg overflow-hidden bg-gray-800 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:rounded-xl">
         {/* Image Section */}
-        <div className="relative h-56 w-full overflow-hidden">
+        <div className="relative h-60 w-full overflow-hidden">
           <Image
             width={400}
             height={300}
@@ -174,7 +174,7 @@ const ProductCard: FC<ProductCardProps> = ({ id, title, img, price, category }) 
         </div>
 
         {/* Overlay Animation */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800 to-transparent opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
       </div>
     </Link>
   );

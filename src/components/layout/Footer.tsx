@@ -1,4 +1,4 @@
-import logo from '../../../public/logo-1.png';
+import logo from '../../../public/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import '@fortawesome/fontawesome-free/css/all.min.css';

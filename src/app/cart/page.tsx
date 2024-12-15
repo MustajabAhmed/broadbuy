@@ -706,7 +706,7 @@ const Cart = () => {
 
     return (
         <div className="min-h-screen bg-gray-900 text-white py-10 px-4 md:px-16 animate-fade-in">
-            <h1 className="text-4xl font-extrabold text-center mb-10 animate-slide-in-down shadow-text">
+            <h1 className="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mb-16 animate-fade-in-up">
                 Shopping Cart
             </h1>
             {filteredProducts.length > 0 ? (
@@ -731,14 +731,14 @@ const Cart = () => {
                                         className="rounded-md shadow-md"
                                     />
                                     <div>
-                                        <h2 className="text-xl font-semibold text-white drop-shadow-md">
+                                        <h2 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 drop-shadow-md">
                                             {product.title}
                                         </h2>
                                         <p className="text-sm text-gray-300">
                                             {product.cloth_type.cloth_tyoey_name}
                                         </p>
                                         <p className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 font-semibold mt-1 animate-pulse">
-                                            Delivery: 5 Working Days
+                                            <span className='text-white animate-none'>Delivery:</span> 5 Working Days
                                         </p>
                                         <div className="flex justify-between items-center mt-2">
                                             <div className="text-lg font-bold text-white drop-shadow-lg">
@@ -792,7 +792,7 @@ const Cart = () => {
                     </div>
                 </div>
             ) : (
-                <p className="text-center text-gray-100 animate-fade-in-up">
+                <p className="text-center text-pink-500 animate-fade-in-up">
                     Your cart is currently empty.
                 </p>
             )}

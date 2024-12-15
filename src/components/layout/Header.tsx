@@ -1,6 +1,6 @@
 'use client';
 
-import logo from '../../../public/logo-1.png';
+import logo from '../../../public/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingCart } from 'lucide-react';
