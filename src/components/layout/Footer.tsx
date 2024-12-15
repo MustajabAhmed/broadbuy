@@ -1,11 +1,11 @@
-import logo from '../../../public/logo-1.png';
+import logo from '../../../public/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-gray-300 py-10 px-10 md:px-28 relative bg-gradient-to-b from-black via-gray-800 to-black">
+        <footer className="bg-gray-900 text-gray-300 py-10 px-10 md:px-28 relative bg-gradient-to-b from-gray-900 via-gray-800 to-black">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 {/* Logo and Description */}
                 <div>
