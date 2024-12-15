@@ -74,7 +74,8 @@ const Footer = () => {
             </div>
 
             <div className="mt-8 text-center text-gray-500">
-                &copy; {new Date().getFullYear()} BroadBuy. All rights reserved.
+                Made with ❤️ by Mustajab
+                {/* &copy; {new Date().getFullYear()} BroadBuy. All rights reserved. */}
             </div>
         </footer>
     );
