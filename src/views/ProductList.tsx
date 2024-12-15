@@ -79,11 +79,18 @@ import { Image as IImage } from 'sanity'
 
 const getProductData = async () => {
   const res = await client.fetch(`*[_type=="product"]{
-    price, product_image, cloth_type -> {
+    price,
+    product_image,
+    cloth_type -> {
       cloth_type_name
-    }, product_care, cloth_category -> {
+    },
+    product_care,
+    cloth_category -> {
       cloth_category_name
-    }, title, product_details, _id
+    },
+    title,
+    product_details,
+    _id
   }`)
   return res
 }

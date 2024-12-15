@@ -51,7 +51,7 @@ const Header = () => {
                         className="h-12 w-12 rounded-full bg-gray-800 flex justify-center items-center relative hover:scale-110 transition-transform duration-300 ease-in-out"
                     >
                         <span
-                            className="absolute -right-1 -top-1 rounded-full bg-yellow-500 h-5 w-5 text-white text-xs flex items-center justify-center animate-pulse"
+                            className="absolute -right-1 -top-1 rounded-full bg-pink-500 h-5 w-5 text-white text-xs flex items-center justify-center animate-pulse"
                         >
                             {cartValue}
                         </span>

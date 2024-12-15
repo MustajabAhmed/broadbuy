@@ -785,7 +785,7 @@ const Cart = () => {
                                     }))
                                 )
                             }
-                            className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 hover:from-pink-500 hover:to-yellow-400 text-gray-900 w-full py-3 rounded-lg mt-6 shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105"
+                            className="text-white font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-blue-500 hover:to-pink-500 w-full py-3 rounded-lg mt-6 shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 animate-bounce-in"
                         >
                             Checkout
                         </button>
