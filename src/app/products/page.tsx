@@ -55,19 +55,30 @@ const AllProducts = async () => {
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-        {data.map((product) => {
-          const categoryName = product.cloth_category?.cloth_category_name ?? "Unknown Category";
-          return (
-            <ProductCard
-              id={product._id}
-              key={product._id}
-              title={product.title}
-              price={product.price}
-              img={product.product_image as Array<IImage>}
-              category={categoryName}
-            />
-          );
-        })}
+        {
+          data.length > 0 ? data.map((product) => {
+            const categoryName = product.cloth_category?.cloth_category_name ?? "Unknown Category";
+            return (
+              <ProductCard
+                id={product._id}
+                key={product._id}
+                title={product.title}
+                price={product.price}
+                img={product.product_image as Array<IImage>}
+                category={categoryName}
+              />
+            );
+          }) : <p
+            className='
+          text-lg
+          text-center
+          text-gray-400
+          
+          '
+          >
+            No products found
+          </p>
+        }
       </div>
     </section>
 
