@@ -279,6 +279,12 @@ const Page = ({ params }: PageProps) => {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-full blur-[150px] animate-pulse"></div>
       </div>
 
+      <div className="flex flex-row lg:flex-row text-center mb-20">
+        <h1 className="text-4xl font-extrabold animate-slide-in bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
+          {productDetail.title}
+        </h1>
+      </div>
+
       <div className="flex flex-col lg:flex-row items-center gap-16">
         {/* Image Section */}
         {/* <div className="relative w-full lg:w-1/2 group">
@@ -320,10 +326,10 @@ const Page = ({ params }: PageProps) => {
 
         {/* Product Details Section */}
         <div className="text-center lg:text-left flex-1 space-y-6">
-          <h1 className="text-4xl font-extrabold animate-slide-in bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
-            {/* <h1 className="text-4xl font-extrabold text-white animate-slide-in"> */}
-            {productDetail.title}
-          </h1>
+          {/* <h1 className="text-4xl font-extrabold animate-slide-in bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"> */}
+          {/* <h1 className="text-4xl font-extrabold text-white animate-slide-in"> */}
+          {/* {productDetail.title}
+          </h1> */}
           <p className="text-lg text-gray-300 animate-fade-in-up">
             {productDetail.product_details}
           </p>
@@ -363,7 +369,7 @@ const Page = ({ params }: PageProps) => {
         <h2 className="text-2xl font-extrabold animate-slide-in bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
           Product Care
         </h2>
-        <ul className="mt-4 space-y-2">
+        <ul className="mt-4 space-y-2 list-disc pl-5">
           {productDetail.product_care.map((care) => (
             <li
               key={care}
