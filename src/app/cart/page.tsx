@@ -620,6 +620,16 @@ import Quantity from '@/components/Quantity';
 import getStripePromise from '@/lib/stripe';
 import { toast } from 'react-hot-toast';
 
+type Product = {
+    _id: string;
+    price: number;
+    title: string;
+    product_image: IImage[];
+    cloth_type: { cloth_tyoey_name: string };
+    cloth_category: { cloth_category_name: string };
+  };
+  
+
 const getProductData = async () => {
     const res = await client.fetch(`*[_type=="product"]{
         price, product_image, cloth_type -> { cloth_tyoey_name },
@@ -635,7 +645,7 @@ const getAddToCartProduct = async () => {
     return result;
 };
 
-const handleCheckout = async (filteredProducts) => {
+const handleCheckout = async (filteredProducts: Product[]) => {
     const response = await fetch('/api/stripe-session/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
