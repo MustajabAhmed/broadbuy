@@ -10,13 +10,13 @@ const Footer = () => {
                 {/* Logo and Description */}
                 <div>
                     <h2 className="text-white text-2xl font-bold mb-4">
-                    <Link href={'/'}>
-                    <Image
-                        className="w-40 hover:scale-105 transition-transform duration-300 ease-in-out"
-                        src={logo}
-                        alt="logo"
-                    />
-                </Link>
+                        <Link href={'/'}>
+                            <Image
+                                className="w-40 hover:scale-105 transition-transform duration-300 ease-in-out"
+                                src={logo}
+                                alt="logo"
+                            />
+                        </Link>
                     </h2>
                     <p className="text-gray-400">Your one-stop shop for all your needs. From clothing to accessories, find everything in one place with the best deals!</p>
                 </div>
@@ -74,7 +74,12 @@ const Footer = () => {
             </div>
 
             <div className="mt-8 text-center text-gray-500">
-                Made with ❤️ by Mustajab
+                Made with ❤️ by <Link
+                    href="https://mustajabahmed.vercel.app"
+                    target="blank"
+                    className=" bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"
+                >Mustajab Ahmed
+                </Link>
                 {/* &copy; {new Date().getFullYear()} BroadBuy. All rights reserved. */}
             </div>
         </footer>
